@@ -1,0 +1,81 @@
+/* Container styles for the sidebar */
+.sidebar-container {
+    position: absolute;
+    top: 40px;
+    left: 280px;
+    width: 432px;
+    height: 856px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header section where the buttons are displayed */
+  .sidebar-header {
+    display: flex;
+    width: 258px; /* Hug width */
+    height: 32px; /* Hug height */
+    top: 40px;
+    left: 296px;
+    gap: 40px; /* Gap between buttons */
+    opacity: 1; /* Set to 0 by default */
+  }
+  
+  /* Active button styles */
+  .sidebar-button.active {
+    width: 88px; /* Width for active button */
+    height: 32px; /* Height for active button */
+    background: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: left;
+    color: white; /* Spotify green for active state */
+    cursor: pointer;
+  }
+  
+  /* Inactive button styles */
+  .sidebar-button {
+    width: 130px; /* Width for inactive button */
+    height: 32px; /* Height for inactive button */
+    background: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.5); /* Set opacity for text */
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar-button:hover {
+    color: #1db954; /* Change color on hover */
+  }
+  
+  /* Content area styles */
+  .sidebar-content {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    color: #fff;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .sidebar-container {
+      top: 20px;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      position: relative;
+    }
+  
+    .sidebar-header {
+      justify-content: center;
+      margin-left: 0;
+    }
+  }
+  

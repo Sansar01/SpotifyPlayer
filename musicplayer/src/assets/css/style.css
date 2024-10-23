@@ -1,0 +1,91 @@
+.music-player {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    max-width: 1512px;
+    max-height: 895px;
+    margin: auto; /* Centers the component */
+    position: relative;
+  }
+  
+  .spotify-logo {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    width: 131.53px;
+    height: 39.41px;
+    opacity: 1;
+  }
+  
+  .spotify-logo img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sidebar {
+    flex: 1;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-content {
+    flex: 2;
+    background-color: #1f1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Profile Section */
+  .profile-section {
+    position: absolute;
+    top: 500px;
+    left: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 80px;
+    background-color: #151515; /* Set background color for the border-radius */
+    overflow: hidden; /* Ensure the profile image fits within the rounded corners */
+    opacity: 1;
+    overflow: hidden; /* Ensure the profile image fits within the rounded corners */
+  }
+  
+  .profile-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire profile area */
+    background-color: #151515; /* Background color for any space in the radius */
+    border-radius: inherit; /* Inherit the border-radius of the parent div */
+  }
+  
+  /* For responsiveness */
+  @media (max-width: 768px) {
+    .music-player {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      flex: unset;
+      height: 50%;
+    }
+  
+    .main-content {
+      flex: unset;
+      height: 50%;
+    }
+  
+    .spotify-logo {
+      top: 10px;
+      left: 10px;
+    }
+  
+    .profile-section {
+      top: unset;
+      bottom: 10px; /* Adjusts position for smaller screens */
+      left: 10px;
+    }
+  }
+  
