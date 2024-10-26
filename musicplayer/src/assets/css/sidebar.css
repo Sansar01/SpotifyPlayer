@@ -1,81 +1,294 @@
-/* Container styles for the sidebar */
+/* Sidebar container */
 .sidebar-container {
-    position: absolute;
-    top: 40px;
-    left: 280px;
-    width: 432px;
-    height: 856px;
-    display: flex;
+  position: absolute;
+  top: 40px;
+  left: 280px;
+  width: 432px;
+  height: 856px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar header section */
+.sidebar-header {
+  display: flex;
+  width: 258px;
+  height: 32px;
+  gap: 40px;
+  opacity: 1;
+  margin-bottom: 20px;
+}
+
+.sidebar-button.active {
+  width: 88px;
+  height: 32px;
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar-button {
+  width: 130px;
+  height: 32px;
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.sidebar-button:hover {
+  color: #1db954;
+}
+
+/* Search bar styles */
+.search-container {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  justify-content: space-between;
+  background-color: #333;
+}
+
+.search-input {
+  width: 65%;
+  height: 28px;
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  outline: none;
+}
+
+.search-icon-container {
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-icon {
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Sidebar content area */
+.sidebar-content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  color: #fff;
+}
+
+/* Track list styles */
+.track-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.track-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.track-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.track-details {
+  flex: 1;
+  margin-left: 16px;
+  overflow: hidden;
+}
+
+.track-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.track-artist {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.track-duration {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Player Container */
+.player-container {
+  width: 480px;
+  height: 692px;
+  position: absolute;
+  top: 101px;
+  left: 620px;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.player-info {
+  width: 193px;
+  height: 68px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.player-title {
+  width: 193px;
+  height: 36px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: left;
+}
+
+.player-artist {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 24px;
+  text-align: left;
+}
+
+.player-image {
+  width: 480px;
+  height: 510px;
+  object-fit: cover;
+}
+
+.player-controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.control-button {
+  background: none;
+  border: none;
+  color: grey;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.control-button:hover {
+  color: #1db954;
+}
+
+.speaker {
+  width: 48px;
+  height: 48px;
+  border-radius: 72px;
+  position: relative;
+}
+
+.dot {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .sidebar-container {
+    width: 100%;
+    left: 0;
+    height: auto;
+  }
+
+  .player-container {
+    width: 100%;
+    left: 0;
+    top: auto;
+    bottom: 0;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-header, .player-info {
+    justify-content: center;
+  }
+
+  .search-container {
+    padding: 4px;
+  }
+
+  .track-name {
+    font-size: 14px;
+  }
+
+  .track-artist, .track-duration {
+    font-size: 12px;
+  }
+
+  .player-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-container {
+    width: 100%;
+    position: static;
+  }
+
+  .player-container {
     flex-direction: column;
+    padding: 8px;
   }
-  
-  /* Header section where the buttons are displayed */
-  .sidebar-header {
-    display: flex;
-    width: 258px; /* Hug width */
-    height: 32px; /* Hug height */
-    top: 40px;
-    left: 296px;
-    gap: 40px; /* Gap between buttons */
-    opacity: 1; /* Set to 0 by default */
+
+  .player-title {
+    font-size: 20px;
+    line-height: 24px;
   }
-  
-  /* Active button styles */
-  .sidebar-button.active {
-    width: 88px; /* Width for active button */
-    height: 32px; /* Height for active button */
-    background: none;
-    border: none;
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
-    text-align: left;
-    color: white; /* Spotify green for active state */
-    cursor: pointer;
+
+  .player-artist {
+    font-size: 14px;
   }
-  
-  /* Inactive button styles */
-  .sidebar-button {
-    width: 130px; /* Width for inactive button */
-    height: 32px; /* Height for inactive button */
-    background: none;
-    border: none;
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
-    text-align: left;
-    color: rgba(255, 255, 255, 0.5); /* Set opacity for text */
-    cursor: pointer;
-    transition: color 0.3s ease;
+
+  .control-button {
+    font-size: 20px;
   }
-  
-  .sidebar-button:hover {
-    color: #1db954; /* Change color on hover */
-  }
-  
-  /* Content area styles */
-  .sidebar-content {
-    flex: 1;
-    padding: 16px;
-    overflow-y: auto;
-    color: #fff;
-  }
-  
-  /* Responsiveness */
-  @media (max-width: 768px) {
-    .sidebar-container {
-      top: 20px;
-      left: 0;
-      width: 100%;
-      height: 50%;
-      position: relative;
-    }
-  
-    .sidebar-header {
-      justify-content: center;
-      margin-left: 0;
-    }
-  }
-  
+}

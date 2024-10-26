@@ -9,9 +9,9 @@ function App() {
       <div className="spotify-logo">
         <img src={Logo} alt="Spotify" />
       </div>
-      <Sidebar />
+     
       <div className="main-content">
-        {/* This would be the space for the album art and controls */}
+      <Sidebar />
       </div>
       <div className="profile-section">
         <img src={profile} alt="Profile" />
